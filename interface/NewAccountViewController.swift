@@ -9,10 +9,12 @@ import UIKit
 
 class NewAccountViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+  
     @IBAction func registerAccount(_ sender: Any) {
        
             let alertController = UIAlertController(title: "Account Created", message:
