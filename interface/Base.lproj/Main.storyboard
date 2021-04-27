@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="FdC-xt-nmH">
             <objects>
-                <viewController id="2co-ip-0oA" sceneMemberID="viewController">
+                <viewController id="2co-ip-0oA" customClass="LocationViewController" customModule="interface" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NM7-28-xqr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,19 +190,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Obtain Location"/>
                                 <connections>
-                                    <segue destination="9hg-9o-apT" kind="show" id="3tJ-tA-b63"/>
+                                    <action selector="changeLocationBttnTapped:" destination="2co-ip-0oA" eventType="touchUpInside" id="FhM-Xm-HSa"/>
+                                    <segue destination="9hg-9o-apT" kind="show" id="F3f-Ne-Vrc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7a-r5-ILf">
+                                <rect key="frame" x="153" y="471" width="226" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mDn-UB-yVK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="e3V-yQ-bWY"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="changeLocationBttn" destination="NM7-28-xqr" id="wfZ-7o-UTf"/>
+                        <outlet property="locationDataLbl" destination="f7a-r5-ILf" id="Gha-Ca-7TP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckc-ec-8I6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="1089"/>
+            <point key="canvasLocation" x="953.62318840579712" y="1088.1696428571429"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0zy-VY-z6F">
@@ -218,7 +231,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="53"/>
                                 <state key="normal" title="Eat." backgroundImage="OrangeRect"/>
                                 <connections>
-                                    <segue destination="2bR-9S-GIX" kind="show" id="Zae-SZ-86f"/>
+                                    <segue destination="2bR-9S-GIX" kind="show" id="8b8-ku-rhL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nr-KT-mxR">
@@ -289,7 +302,7 @@
             <objects>
                 <viewController id="2bR-9S-GIX" customClass="RecViewController" customModule="interface" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vdR-pM-hZX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VjD-Sa-WIg">
@@ -330,7 +343,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="VjD-Sa-WIg" id="4ef-gn-8xA"/>
-                        <outlet property="venueTableView" destination="c4i-Tl-pZ7" id="fD7-wZ-8jc"/>
                         <outlet property="venuesTableView" destination="c4i-Tl-pZ7" id="k8R-dX-dxO"/>
                     </connections>
                 </viewController>
@@ -770,7 +782,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIO-1b-XOB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="1088"/>
+            <point key="canvasLocation" x="-5635" y="520"/>
         </scene>
         <!--To Do List-->
         <scene sceneID="0jQ-WV-7Tr">
@@ -1445,7 +1457,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M6I-mh-Lct"/>
+        <segue reference="8b8-ku-rhL"/>
         <segue reference="Tck-Lq-aCD"/>
     </inferredMetricsTieBreakers>
     <resources>
