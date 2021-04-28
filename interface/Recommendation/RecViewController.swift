@@ -14,15 +14,15 @@ import SwiftUI
 class RecViewController: UIViewController, UISearchBarDelegate {
     
     //Zoom to back Current Location Action
-   /* @IBAction func zoomToUser(_ sender: Any) {
+    @IBAction func zoomToUser(_ sender: Any) {
         mapView.setUserTrackingMode(.follow, animated: true)
-    }*/
-    
-    
-    //Info Button Action
-    /*@IBAction func customAlert(_ sender: Any) {
-        SCLAlertView().showInfo("Info", subTitle: "Use the search icon to find and pin locations.")
-    }*/
+    }
+//
+//
+//    Info Button Action
+//    /*@IBAction func customAlert(_ sender: Any) {
+//        SCLAlertView().showInfo("Info", subTitle: "Use the search icon to find and pin locations.")
+//    }*/
     
     //Table View
     //@IBOutlet weak var venuesTableView: UITableView!
@@ -112,7 +112,7 @@ class RecViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
      
         //zoomToUser
-      //  mapView.showsUserLocation = true
+        mapView.showsUserLocation = true
         
         let initialLocation = CLLocation(latitude: 29.721085, longitude:  -95.342049)
         
