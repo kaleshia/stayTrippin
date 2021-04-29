@@ -2,8 +2,8 @@
 //  CustomCell.swift
 //  YelpFusion
 //
-//  Created by Pouya Khansaryan on 2/23/20.
-//  Copyright © 2020 pkh. All rights reserved.
+//  
+//
 //
 
 import UIKit

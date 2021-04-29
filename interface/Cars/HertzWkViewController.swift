@@ -8,19 +8,19 @@
 import UIKit
 import WebKit
 class HertzWkViewController:  UIViewController, WKUIDelegate,WKNavigationDelegate {
-    @IBOutlet weak var nationalWkOutlet: WKWebView!
+    @IBOutlet weak var hertzWkOutlet: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
-        nationalWkOutlet.navigationDelegate = self
-        nationalWkOutlet.allowsBackForwardNavigationGestures = true
-        nationalWkOutlet.uiDelegate = self
+        hertzWkOutlet.navigationDelegate = self
+        hertzWkOutlet.allowsBackForwardNavigationGestures = true
+        hertzWkOutlet.uiDelegate = self
 
       let myURL = URL(string: "https://www.hertz.com")
       let myRequest = URLRequest(url: myURL!)
-        nationalWkOutlet.load(myRequest)
+        hertzWkOutlet.load(myRequest)
     }
 }

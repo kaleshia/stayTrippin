@@ -9,20 +9,22 @@
 import UIKit
 import MapKit
 import SwiftUI
-//import SCLAlertView
+import SCLAlertView
 
 class RecViewController: UIViewController, UISearchBarDelegate {
     
+   
     //Zoom to back Current Location Action
     @IBAction func zoomToUser(_ sender: Any) {
         mapView.setUserTrackingMode(.follow, animated: true)
     }
-//
-//
-//    Info Button Action
-//    /*@IBAction func customAlert(_ sender: Any) {
-//        SCLAlertView().showInfo("Info", subTitle: "Use the search icon to find and pin locations.")
-//    }*/
+
+   // Info Button Action
+   @IBAction func customAlert(_ sender: Any) {
+        SCLAlertView().showInfo("Info", subTitle: "Use the search icon to find and pin locations.")
+    }
+    
+  
     
     //Table View
     //@IBOutlet weak var venuesTableView: UITableView!
@@ -31,6 +33,8 @@ class RecViewController: UIViewController, UISearchBarDelegate {
    
     //Map View
     @IBOutlet private var mapView: MKMapView!
+    
+    
     
     //Search field operates when the user click this button and it allows the user to search that place of interest
     @IBAction func searchButton(_ sender: Any) {
@@ -111,13 +115,24 @@ class RecViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        
+        
+        
+        
+        
+        if mapView != nil{
         //zoomToUser
         mapView.showsUserLocation = true
+        //mapView.centerToLocation(initialLocation)
+        }
+        let initialLocation  = CLLocation(latitude: 29.721085, longitude:  -95.342049)
         
-        let initialLocation = CLLocation(latitude: 29.721085, longitude:  -95.342049)
         
+        if mapView != nil{
         // Calling map of "current location"
         mapView.centerToLocation(initialLocation)
+        
+            
         
         //Create custom cell
         venuesTableView.delegate = self
@@ -125,7 +140,9 @@ class RecViewController: UIViewController, UISearchBarDelegate {
         venuesTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
         venuesTableView.separatorStyle = .none
         
-        retrieveVenues(latitude: CPLatitude, longitude: CPLongitude, category: "bbq",
+            
+            
+            retrieveVenues(latitude: CPLatitude, longitude: CPLongitude, category: "bbq",
                        limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
                         
                         if let response = response {
@@ -135,22 +152,14 @@ class RecViewController: UIViewController, UISearchBarDelegate {
                             }
                         }
         }
-    }
+            
+        }
     
-    @IBAction func bbqBtn(_ sender: Any) {
-        retrieveVenues(latitude: CPLatitude, longitude: CPLongitude, category: "bbq",
-                       limit: 20, sortBy: "distance", locale: "en_US") { (response, error) in
-                        
-                        if let response = response {
-                            self.venues = response
-                            DispatchQueue.main.async {
-                                self.venuesTableView.reloadData()
-                            }
-                        }
-        
-}
     }
+          
 }
+    
+
     // Current location set on map in the center
     private extension MKMapView {
       func centerToLocation(
@@ -190,5 +199,8 @@ class RecViewController: UIViewController, UISearchBarDelegate {
     }
 
 
+
+
+    
 
 
